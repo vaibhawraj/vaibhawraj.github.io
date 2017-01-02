@@ -1,5 +1,5 @@
   //Utility
-        //App
+        //App.
         var eKycApp = angular.module('eKycApp',[]);
         eKycApp.controller('eKycController',function($scope){
             $scope.SUCCESS = {icon:'success',color:'#4bc076',fill:'white',fontColor:'black'};
@@ -29,6 +29,7 @@
                 }
             ];
             $scope.init = function(){
+                $scope.showSection = true;
                 //Prepare times
                 $scope.aadharNumber = window.aadharNumber;
                 $scope.fullName = '';
