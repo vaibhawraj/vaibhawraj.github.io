@@ -55,19 +55,7 @@
             $scope.getOtp = function(){
                 $scope.isGetOtpDisabled = true;
                 $scope.showGetOtpSpinner = true;
-              Visualforce.remoting.Manager.invokeAction(
-            '{!$RemoteAction.eKycExtension.sendReq}',
-            window.phoneNumber, 
-            function(result, event){
-              console.log('Event',event);
-                if (event.status) {
-                    // Get DOM IDs for HTML and Visualforce elements like this
-                   console.log('Result',result);
-                   $scope.otpSent();
-                }
-            }, 
-            {escape: true}
-        );
+                window.getOtpFromController($scope.otpSent);
                 /*var tOut = setTimeout(function(){
                     $scope.otpSent();
                 },2000);
