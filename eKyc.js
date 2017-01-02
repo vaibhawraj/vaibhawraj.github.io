@@ -11,31 +11,45 @@
                     currentState : $scope.UNPROCESSED,
                     inprogress : false
                 },{
-                    name : 'Fetching Demographic Details',
+                    name : 'Populating Demographic Details',
                     currentState : $scope.UNPROCESSED,
                     inprogress : false
                 },{
-                    name : 'Fetching Bank Details',
+                    name : 'Getting Customer Income Details',
                     currentState : $scope.UNPROCESSED,
                     inprogress : false
                 },{
-                    name : 'Checking Credit Score',
+                    name : 'Getting Cibil Score',
+                    currentState : $scope.UNPROCESSED,
+                    inprogress : false
+                },{
+                    name : 'Saving Details',
                     currentState : $scope.UNPROCESSED,
                     inprogress : false
                 }
             ];
             $scope.init = function(){
                 //Prepare times
-                $scope.aadharNumber = '';
+                $scope.aadharNumber = window.aadharNumber;
                 $scope.fullName = '';
                 $scope.dob = '';
+                $scope.otp = '';
+
+                //Button Flag
                 $scope.isGetOtpDisabled = false;
+                $scope.isValidateOtpDisabled = false;
+                $scope.showResendOtp = false;
+                
+                //Show Panel Flags
+                $scope.showEnterOtpCard = false;
+                $scope.showStatus = false;
+                $scope.showAadharDetailPanel = true;
+
                 $scope.showGetOtpSpinner = false;
                 $scope.showValidateSpinner = false;
-                $scope.showEnterOtpCard = false;
-                $scope.showResendOtp = false;
-                $scope.isValidateOtpDisabled = false;
-                $scope.showStatus = false;
+
+                //Error Flag
+                $scope.hasOTPError = false;
             }
             $scope.getOtp = function(){
                 $scope.isGetOtpDisabled = true;
@@ -57,11 +71,16 @@
                 $scope.showValidatingOtpMessage = true;
                 $scope.showValidateSpinner = true;
                 $scope.isValidateOtpDisabled = true;
+                $scope.hasOTPError = false;
                 console.log('OTP : ' + $scope.otp );
                 //Otp Validation logic goes here
                 var tOut = setTimeout(function(){
                     $scope.showValidateSpinner = false;
-                    $scope.validateOtpSuccessCallback();
+                    if($scope.otp == window.otp) {
+                        $scope.validateOtpSuccessCallback();
+                    } else {
+                        $scope.invalidOtp();
+                    }
                 },2000);
 
             }
@@ -69,8 +88,15 @@
                 console.log('Successfully Validated : Validated Found True');
                 $scope.showStatus = true;
                 $scope.showEnterOtpCard = false;
+                $scope.showAadharDetailPanel = false;
                 $scope.isDoneDisabled = true;
+                $scope.hasOTPError = false;
                 $scope.initiateProcess(0);
+                $scope.apply();
+            }
+            $scope.invalidOtp = function(){
+                $scope.hasOTPError = true;
+                $scope.isValidateOtpDisabled = false;
                 $scope.apply();
             }
 
@@ -97,6 +123,9 @@
                 if($scope.$$phase == null) {
                     $scope.$apply();
                 }
+            }
+            $scope.save = function(){
+                sforce.one.navigateToSObject(window.id);   
             }
         });
 
