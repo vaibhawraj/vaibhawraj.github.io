@@ -48,6 +48,7 @@
 
                 $scope.showGetOtpSpinner = false;
                 $scope.showValidateSpinner = false;
+                $scope.showDoneSpinner = false;
 
                 //Error Flag
                 $scope.hasOTPError = false;
