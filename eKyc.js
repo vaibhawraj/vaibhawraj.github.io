@@ -127,7 +127,7 @@
                 }
             }
             $scope.save = function(){
-                sforce.one.navigateToSObject(window.id);   
+                window.customSave();
             }
         });
 
