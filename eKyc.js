@@ -127,6 +127,8 @@
                 }
             }
             $scope.save = function(){
+               $scope.isDoneDisabled = true;
+               $scope.showDoneSpinner = true;
                 window.customSave();
             }
         });
