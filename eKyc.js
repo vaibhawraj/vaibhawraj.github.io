@@ -43,24 +43,29 @@
                 
                 //Show Panel Flags
                 $scope.showEnterOtpCard = false;
-                $scope.showStatus = false;
-                $scope.showAadharDetailPanel = true;
+                $scope.showStatus = true;
+                $scope.showAadharDetailPanel = false;
 
                 $scope.showGetOtpSpinner = false;
                 $scope.showValidateSpinner = false;
                 $scope.showDoneSpinner = false;
-
+$scope.showStatus = true;
+                $scope.showEnterOtpCard = false;
+                $scope.showAadharDetailPanel = false;
+                $scope.isDoneDisabled = true;
+                $scope.hasOTPError = false;
+                $scope.initiateProcess(0);
+                $scope.apply();
                 //Error Flag
                 $scope.hasOTPError = false;
             }
             $scope.getOtp = function(){
                 $scope.isGetOtpDisabled = true;
                 $scope.showGetOtpSpinner = true;
-                window.getOtpFromController($scope.otpSent);
-                /*var tOut = setTimeout(function(){
+                var tOut = setTimeout(function(){
                     $scope.otpSent();
                 },2000);
-                console.log(tOut);*/
+                console.log(tOut);
             }
             $scope.otpSent = function(){
                 $scope.isGetOtpDisabled = false;
@@ -128,9 +133,9 @@
                 }
             }
             $scope.save = function(){
-               $scope.isDoneDisabled = true;
-               $scope.showDoneSpinner = true;
-                window.customSave();
+                $scope.isDoneDisabled = true;
+                $scope.showDoneSpinner = true;
+                sforce.one.navigateToSObject(window.id);   
             }
         });
 
