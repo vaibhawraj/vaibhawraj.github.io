@@ -117,7 +117,7 @@ $scope.showStatus = true;
                         $scope.statusCheckpoints[statusCheckpointNo].inprogress = false;
                         statusCheckpointNo = statusCheckpointNo+1;
                         $scope.initiateProcess(statusCheckpointNo);
-                    },2500+Math.random()*2500);
+                    },5000+Math.random()*3000);
                 } else {
                     $scope.isDoneDisabled = false;
                 }
