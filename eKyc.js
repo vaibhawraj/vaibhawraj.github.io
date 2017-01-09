@@ -141,6 +141,7 @@
                 window.navigateTo(id);
             }
             $scope.docSave = function(){
+               window.docs = $scope.docs;
                 window.customSave();
             }
         });
