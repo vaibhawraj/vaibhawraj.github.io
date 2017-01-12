@@ -54,7 +54,7 @@
                 $scope.showAadharDetailPanel = false;
                 $scope.isDoneDisabled = true;
                 $scope.hasOTPError = false;
-                $scope.initiateProcess(0);
+               // $scope.initiateProcess(0);
                 //Error Flag
                 $scope.hasOTPError = false;
                 $scope.apply();
