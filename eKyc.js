@@ -43,8 +43,8 @@
                 
                 //Show Panel Flags
                 $scope.showEnterOtpCard = false;
-                $scope.showStatus = true;
-                $scope.showAadharDetailPanel = false;
+                $scope.showStatus = false;
+                $scope.showAadharDetailPanel = true;
 
                 $scope.showGetOtpSpinner = false;
                 $scope.showValidateSpinner = false;
