@@ -19,7 +19,7 @@
                     currentState : $scope.UNPROCESSED,
                     inprogress : false
                 },{
-                    name : 'Getting Cibil Score',
+                    name : 'Getting Credit Score',
                     currentState : $scope.UNPROCESSED,
                     inprogress : false
                 },{
