@@ -1,0 +1,14 @@
+body, div,ul,li
+{
+	margin:0;
+	padding:0;
+}
+#frame
+{
+	position:absolute;
+	width:1000px;
+	height:600px;
+	margin-left:-500px;
+	margin-top:-300px;
+	background-image:url('/pizza2go/image/banner0.jpg');
+}

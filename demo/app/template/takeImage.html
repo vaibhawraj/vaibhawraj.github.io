@@ -1,0 +1,125 @@
+<div class="page" ng-class="backgroundColor()">
+	<!-- Header -->
+	<header id="header" class="page-topbar">
+        <!-- start header nav-->
+        <div class="navbar-fixed">
+            <nav class="navbar-color" ng-class="navBackgroundColor()">
+                <div class="nav-wrapper">
+            		
+            		<div class="valign-wrapper" style="height:100%;">
+            		<div class="waves-effect waves-light" ng-click="cancel()" style="padding:5px;position: absolute;">
+            		<img class="img-responsive center valign" style="width:40px" src="image/ic_arrow_back_white_48px.svg" alt="Strap">
+            		</div>
+            			<h1 style="font-size:20px;width:100%" class="center-align valign">Add Image</h1>
+            			<!--<div class="right" style="margin-right: 10px;position: absolute;right:0px;top:0px">
+            						<a class="waves-effect waves-light btn valign-wrapper" ng-click="save()">
+            						<span class="valign" style="height:100%;font-size:1.3rem;line-height: 36px">Save</span>
+            						</a>
+            			</div>-->
+            		</div>
+                </div>
+            </nav>
+        </div>
+        <!-- end header nav-->
+    </header>
+	<main style="overflow-y: auto;display:block;height:100%;position: relative;">
+		<div class="container" style="margin-bottom: 70px;margin-top:30px">
+			<ul class="collection">
+				<li class="collection-item" style="position:relative">
+					<b>Store Front</b>
+					<div class="right" style="margin-right: 10px;position: absolute;right:0px;top:0px">
+            						<a class="btn-floating z-depth-0 white waves-effect" ng-click="getPicture('Store Front')">
+            						<i class="material-icons" style="color:black">add_a_photo</i>
+            						</a>
+        			</div>
+				</li>
+				<li class="collection-item" style="position:relative">
+					<b>Store Rack</b>
+					<div class="right" style="margin-right: 10px;position: absolute;right:0px;top:0px">
+            						<a class="btn-floating z-depth-0 white waves-effect" ng-click="getPicture('Store Rack')">
+            						<i class="material-icons" style="color:black">add_a_photo</i>
+            						</a>
+        			</div>
+				</li>
+				<li class="collection-item" style="position:relative">
+					<b>Others</b>
+					<div class="right" style="margin-right: 10px;position: absolute;right:0px;top:0px">
+            						<a class="btn-floating z-depth-0 white waves-effect" ng-click="getPicture('Others')">
+            						<i class="material-icons" style="color:black">add_a_photo</i>
+            						</a>
+        			</div>
+				</li>
+			   
+			</ul>
+			<!--<div class="card">
+				<div class="card-image waves-effect waves-block waves-light" style="background: url('image/user-profile-bg.jpg');height:80px; ">
+	            	<span class="card-title">
+	            	{{activity.accountName}} Store Images
+	            	</span>
+	            </div>
+	            <div class="card-content">
+	            	<table class="bordered">
+	            		<tbody>
+	            			<tr></tr>
+	            			<tr ng-repeat="img in imageList">
+	            				<td width="90%">
+	            					<div class="waves-effect waves-light center-align black" style="text-align:center;height:150px;width:150px;padding:0px">
+	            						<div class="valign-wrapper " style="position:relative;height:100%;color:white;padding:10px;">
+	            							<img style="margin:auto;max-width:100%;max-height:100%" src='data:image/jpeg;base64,{{img.record.Body}}' >
+	            						</div>
+	            					</div>
+	            				</td>
+	            				<td width="10%">
+	            					<div ng-show="img.uploaded">
+		            					<input type="checkbox" id="imageCheck" checked="{{img.success}}"/>
+										<label for="imageCheck" style="text-decoration: none;color:black">
+										</label>
+									</div>
+									<div class="preloader-wrapper small active" ng-show="!img.uploaded">
+								      <div class="spinner-layer spinner-blue-only">
+								        <div class="circle-clipper left">
+								          <div class="circle"></div>
+								        </div><div class="gap-patch">
+								          <div class="circle"></div>
+								        </div><div class="circle-clipper right">
+								          <div class="circle"></div>
+								        </div>
+								      </div>
+								    </div>
+	            				</td>
+	            			</tr>
+	            			<tr>
+	            				<td width="90%">
+	            					<div class="waves-effect waves-light center-align btn" style="text-align:center;height:150px;width:150px;" ng-click="getPicture()">
+	            						<div class="valign-wrapper " style="height:100%;color:white">
+	            							<img style="margin:auto" src='image/ic_add_a_photo_white_48px.svg' height="80px" align="center">
+	            						</div>
+	            					</div>
+	            				</td>
+	            				<td width="10%">
+	            					<div ng-show="false">
+		            					<input type="checkbox" id="imageCheck"/>
+										<label for="imageCheck" style="text-decoration: none;color:black">
+										</label>
+									</div>
+									<div class="preloader-wrapper small active" ng-show="false">
+								      <div class="spinner-layer spinner-blue-only">
+								        <div class="circle-clipper left">
+								          <div class="circle"></div>
+								        </div><div class="gap-patch">
+								          <div class="circle"></div>
+								        </div><div class="circle-clipper right">
+								          <div class="circle"></div>
+								        </div>
+								      </div>
+								    </div>
+	            				</td>
+	            			</tr>
+	            		</tbody>
+	            	</table>
+	            </div>
+			</div>-->
+		</div>
+	</main>
+	<footer></footer>
+</div>

@@ -1,0 +1,57 @@
+<div class="page" ng-class="backgroundColor()">
+	<!-- Header -->
+	<header id="header" class="page-topbar">
+        <!-- start header nav-->
+        <div class="navbar-fixed">
+            <nav class="navbar-color">
+                <div class="nav-wrapper" ng-class="navBackgroundColor()" style="height: 56px">
+            		
+            		<div class="valign-wrapper" style="height:56px;">
+                		<div class="waves-effect waves-light" ng-click="goPreviousPage('home')" style="padding:5px;position: absolute;">
+                		<img class="img-responsive center valign" style="width:40px" src="image/ic_arrow_back_white_48px.svg" alt="Strap">
+                		</div>
+            			<h1 style="font-size:20px;width:100%" class="center-align valign">Stores</h1>
+            		</div>
+                    
+                </div>
+            </nav>
+        </div>
+        <!-- end header nav-->
+    </header>
+	<main style="overflow-y: auto;display:block;height:100%;position: relative;">
+		<div class="container" style="margin-bottom: 70px;margin-top:30px">
+            <div ng-show="showSpinner" style="text-align:center">
+                <spinner size="'small'"></spinner>
+            </div>
+            <div class="card">
+                <div class="card-content">
+                        <p class="card-title">First Half</p>
+    			<ul class="collection">
+                    <li class="collection-item" ng-show="listA.length == 0">
+                        No records to show
+                    </li>
+    				<li ng-repeat="activity in listA" ng-click="checkThis(activity)" class="collection-item">
+    					<b>{{activity.accountName}}</b>
+                        <p style="margin-left:15px;">{{activity.address}}</p>
+    				</li>
+    			</ul>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-content">
+                    <p class="card-title">Second Half</p>
+                <ul class="collection">
+                    <li class="collection-item" ng-show="listB.length == 0">
+                        No records to show
+                    </li>
+                    <li ng-repeat="activity in listB" ng-click="checkThis(activity)" class="collection-item">
+                        <b>{{activity.accountName}}</b>
+                        <p style="margin-left:15px;">{{activity.address}}</p>
+                    </li>
+                </ul>
+                </div>
+            </div>
+		</div>
+	</main>
+	<footer></footer>
+</div>

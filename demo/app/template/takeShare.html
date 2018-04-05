@@ -1,0 +1,129 @@
+<div class="page" ng-class="backgroundColor()">
+	<!-- Header -->
+	<header id="header" class="page-topbar">
+        <!-- start header nav-->
+        <div class="navbar-fixed">
+            <nav class="navbar-color" ng-class="navBackgroundColor()">
+                <div class="nav-wrapper">
+            		
+            		<div class="valign-wrapper" style="height:100%;">
+            		<div class="waves-effect waves-light" ng-click="cancel()" style="padding:5px;position: absolute;">
+            		<img class="img-responsive center valign" style="width:40px" src="image/ic_arrow_back_white_48px.svg" alt="Strap">
+            		</div>
+            			<h1 style="font-size:20px;width:100%" class="center-align valign">Product Share</h1>
+            			<div class="right" style="margin-right: 10px;position: absolute;right:0px;top:0px">
+            						<a class="waves-effect waves-light btn valign-wrapper" ng-click="save()">
+            						<span class="valign" style="height:100%;font-size:1.3rem;line-height: 36px">Save</span>
+            						</a>
+            			</div>
+            		</div>
+                </div>
+            </nav>
+        </div>
+        <!-- end header nav-->
+    </header>
+	<main style="overflow-y: auto;display:block;height:100%;position: relative;">
+		<div class="container" style="margin-bottom: 70px;margin-top:30px">
+			<ul class="collection with-header" data-collapsible="accordion" ng-repeat="cat in categoryList">
+				<li class="collection-header">
+					<b>{{cat.categoryName}} - {{getSum(cat)}} %</b>
+					<div class="right" style="margin-right: 10px;position: absolute;right:0px;top:0px">
+            						<a class="btn-floating white waves-effect" ng-click="getPicture(cat.categoryName)">
+            						<i class="material-icons" style="color:black">add_a_photo</i>
+            						</a>
+        			</div>
+				</li>
+			    <li class="collection-item">
+			    	<div class="row" style="margin-bottom:0px">
+			    		<div class="col s3">
+				    	Dabur
+				    	</div>
+				    	<div class="col s6">
+					    	<span class="range-field">
+						      <input type="range" ng-model="cat.dabur" id="test5" min="0" max="20" style="margin:0px"/>
+						    </span>
+					    </div>
+					    <div class="col s3">
+					    	{{cat.dabur*5}} %
+					    </div>
+				    </div>
+			    </li>
+			    <li class="collection-item">
+			    	<div class="row" style="margin-bottom:0px">
+			    		<div class="col s3">
+				    	Patanjali
+				    	</div>
+				    	<div class="col s6">
+					    	<span class="range-field">
+						      <input type="range" ng-model="cat.patanjali" id="test5" min="0" max="20" style="margin:0px"/>
+						    </span>
+					    </div>
+					    <div class="col s3">
+					    	{{cat.patanjali* 5}} %
+					    </div>
+				    </div>
+			    </li>
+			    <li class="collection-item">
+			    	<div class="row" style="margin-bottom:0px">
+			    		<div class="col s3">
+				    	Sri Sri
+				    	</div>
+				    	<div class="col s6">
+					    	<span class="range-field">
+						      <input type="range" ng-model="cat.srisri" id="test5" min="0" max="20" style="margin:0px"/>
+						    </span>
+					    </div>
+					    <div class="col s3">
+					    	{{cat.srisri * 5}} %
+					    </div>
+				    </div>
+			    </li>
+			    <li class="collection-item">
+			    	<div class="row" style="margin-bottom:0px">
+			    		<div class="col s3">
+				    	Others
+				    	</div>
+				    	<div class="col s6">
+					    	<span class="range-field">
+						      <input type="range" ng-model="cat.others" id="test5" min="0" max="20" style="margin:0px"/>
+						    </span>
+					    </div>
+					    <div class="col s3">
+					    	{{cat.others*5}} %
+					    </div>
+				    </div>
+			    </li>
+			</ul>
+			<!--<div class="card">
+				<div class="card-image waves-effect waves-block waves-light" style="background: url('image/user-profile-bg.jpg');height:80px; ">
+	            	<span class="card-title">
+	            	{{activity.accountName}} Products
+	            	</span>
+	            </div>
+	            <div class="card-content">
+	            	<table>
+	            		<thead>
+	            			<tr>
+	            				<th>Product Name</th>
+	            				<th>Market Share</th>
+	            				<th>Current Stock</th>
+	            			</tr>
+	            		</thead>
+	            		<tbody>
+	            			<tr ng-repeat="product in productList">
+	            				<td>{{product.name}}</td>
+	            				<td>{{product.marketShare}}</td>
+	            				<td width="50px">
+	            				<div class="input-field" style="text-align: center">
+						          <input id="quantity" type="text" class="validate" style="height:25px">
+						    	</div>
+						    </td>
+	            			</tr>
+	            		</tbody>
+	            	</table>
+	            </div>
+			</div>-->
+		</div>
+	</main>
+	<footer></footer>
+</div>

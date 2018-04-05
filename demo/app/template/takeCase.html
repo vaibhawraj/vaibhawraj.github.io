@@ -1,0 +1,79 @@
+<div class="page" ng-class="backgroundColor()">
+	<!-- Header -->
+	<header id="header" class="page-topbar">
+        <!-- start header nav-->
+        <div class="navbar-fixed">
+            <nav class="navbar-color" ng-class="navBackgroundColor()">
+                <div class="nav-wrapper">
+            		
+            		<div class="valign-wrapper" style="height:100%;">
+            		<div class="waves-effect waves-light" ng-click="cancel()" style="padding:5px;position: absolute;">
+            		<img class="img-responsive center valign" style="width:40px" src="image/ic_arrow_back_white_48px.svg" alt="Strap">
+            		</div>
+            			<h1 style="font-size:20px;width:100%; margin-left: 55px" class="valign"></h1>
+            			<div class="right" style="margin-right: 10px;position: absolute;right:0px;top:0px">
+            						<a class="waves-effect waves-light btn valign-wrapper" ng-click="save()">
+            						<span class="valign" style="height:100%;font-size:1.3rem;line-height: 36px">Feedback</span>
+            						</a>
+            			</div>
+            		</div>
+                </div>
+            </nav>
+        </div>
+        <!-- end header nav-->
+    </header>
+	<main style="overflow-y: auto;display:block;height:100%;position: relative;">
+		<div class="container" style="margin-bottom: 70px;margin-top:30px">
+			<div class="card">
+				<div class="card-image waves-effect waves-block waves-light" style="background: url('image/user-profile-bg.jpg');height:80px; ">
+	            	<span class="card-title">
+	            	{{activity.accountName}} Case
+	            	</span>
+	            </div>
+	            <div class="card-content">
+	            	<div class="row">
+				        <div class="input-field col s12">
+				        	<div class="row">
+				        		<label for="textarea1">Subject</label><br/>
+					          	<span class="col s6" style="margin-top:10px">
+							      <input name="group1" type="radio" id="test1" ng-model="subject"  value="suggestion" checked="true"/>
+							      <label for="test1">Suggestion</label>
+							    </span>
+							    <span class="col s6" style="margin-top:10px">
+							      <input name="group1" type="radio" id="test2" ng-model="subject" value="complaint"/>
+							      <label for="test2">Complaint</label>
+							    </span>
+						    </div>
+				        </div>
+				        <div class="input-field col s12" ng-show="subject == 'complaint'">
+				        		<div class="row">
+				        		<label for="textarea1">Reason</label><br/>
+					          	<span class="col s6" style="margin-top:10px">
+							      <input name="group2" type="radio" id="test3" checked="true"/>
+							      <label for="test3">Product Quality</label>
+							    </span>
+							    <span class="col s6" style="margin-top:10px">
+							      <input name="group2" type="radio" id="test4" />
+							      <label for="test4">Product Price</label>
+							    </span>
+							    <span class="col s6" style="margin-top:10px">
+							      <input name="group2" type="radio" id="test5" />
+							      <label for="test5">Service</label>
+							    </span>
+							    <span class="col s6" style="margin-top:10px">
+							      <input name="group2" type="radio" id="test6" />
+							      <label for="test6">Others</label>
+							    </span>
+						    </div>
+				        </div>
+				        <div class="input-field col s12" style="margin-top:-5px">
+				          <textarea id="textarea1" class="materialize-textarea" ng-model="description"></textarea>
+				          <label for="textarea1">Description</label>
+				        </div>
+			        </div>	
+	            </div>
+			</div>
+		</div>
+	</main>
+	<footer></footer>
+</div>

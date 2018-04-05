@@ -1,0 +1,113 @@
+<div class="page" ng-class="backgroundColor()">
+	<!-- Header -->
+	<header id="header" class="page-topbar">
+        <!-- start header nav-->
+        <div class="navbar-fixed">
+            <nav class="navbar-color" ng-class="navBackgroundColor()">
+                <div class="nav-wrapper">
+            		
+            		<div class="valign-wrapper" style="height:100%;">
+            		<div class="waves-effect waves-light" ng-click="goPreviousPage('myActivity')" style="padding:5px;position: absolute;">
+            		<img class="img-responsive center valign" style="width:40px" src="image/ic_arrow_back_white_48px.svg" alt="Strap">
+            		</div>
+            			<h1 style="font-size:20px;width:100%" class="center-align valign">{{activity.accountName}}</h1>
+            		</div>
+                </div>
+            </nav>
+        </div>
+        <!-- end header nav-->
+    </header>
+	<main style="overflow-y: auto;display:block;height:100%;position: relative;">
+		<div class="container" style="margin-bottom: 70px;margin-top:30px">
+			<div class="card">
+	            <div class="card-content" style="padding-top:10px;padding-bottom:10px">
+	            	<!--<div class="row">
+	            		<div class="col s12">
+	            			<h4 class="card-title grey-text text-darken-4">{{activity.shopOwner}}</h4>
+	            			<p class="medium-small grey-text">Store Owner</p>
+	            		</div>
+	            	</div>-->
+	            	<div class="row" style="margin-bottom:0px">
+	            		<div class="col s4">
+	            			<h4 class="card-title grey-text text-darken-4" style="font-size:18px">&#8377 {{activity.lastPurchase}}</h4>
+	            			<p class="medium-small grey-text">Orders for Month</p>
+	            		</div>
+	            		<div class="col s4">
+	            			<h4 class="card-title grey-text text-darken-4" style="font-size:18px">&#8377 {{activity.balanceDue}}</h4>
+	            			<p class="medium-small grey-text">Pending Payment</p>
+	            		</div>
+	            		<div class="col s4">
+	            			<h4 class="card-title grey-text text-darken-4" style="font-size:18px">&#8377 {{activity.todaysOrder}}</h4>
+	            			<p class="medium-small grey-text">Todays Order</p>
+	            		</div>
+	            	</div>
+	            </div>
+	            <div class="card-action">
+	            	<div class="row">
+	            		<div class="col s6">
+			            	<div class="card green darken-4"  ng-click="takeOrder()">
+								<div class="card-content card-move-up valign-wrapper" style="cursor:pointer;height:150px">
+	 								<div class="valign" style="width:100%" >
+										<div class="center-align">
+											<img src="image/ic_shopping_cart_white_48px.svg" height="48px">
+										</div>
+										<div class="center-align" style="color:#a5d6a7 ">Stocks</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col s6">
+							<div class="card green darken-4" ng-click="takeShare()">
+								<div class="card-content card-move-up valign-wrapper" style="cursor:pointer;height:150px">
+									<div class="valign" style="width:100%" >
+										<div class="center-align">
+											<img src="image/ic_view_list_white_48px.svg" height="48px">
+										</div>
+										<div class="center-align" style="color:#a5d6a7">Share of Shelf​</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col s6">
+							<div class="card green darken-4" ng-click="takeCase()">
+								<div class="card-content card-move-up valign-wrapper" style="cursor:pointer;height:150px">
+									<div class="valign" style="width:100%" >
+										<div class="center-align">
+											<img src="image/ic_rate_review_white_48px.svg" height="48px">
+										</div>
+										<div class="center-align" style="color:#a5d6a7 ">Feedback</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col s6">
+							<div class="card green darken-4" ng-click="takeImage()">
+								<div class="card-content card-move-up valign-wrapper" style="cursor:pointer;height:150px">
+									<div class="valign" style="width:100%" >
+										<div class="center-align">
+											<img src="image/ic_playlist_add_check_white_48px.svg" height="48px">
+										</div>
+										<div class="center-align" style="color:#a5d6a7 ">Asset Visibility</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+	            </div>
+			</div>
+		</div>
+	</main>
+	<footer></footer>
+</div>
+
+<!--<div class="page">
+	<h1>{{ activity.accountName }}</h1>
+	Actions 
+	<ul>
+	<li ng-click="takeOrder()">Place Order</li>
+	<li ng-click="takeShare()">Market Share</li>
+	<li ng-click="takeCase()">Case</li>
+	<li ng-click="takeImage()">Take Image</li>
+	<li ng-click="goPreviousPage('myActivity')">Go Back</li>
+	</ul>
+</div>-->

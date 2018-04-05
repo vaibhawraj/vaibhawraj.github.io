@@ -1,0 +1,54 @@
+<div class="page" ng-class="backgroundColor()">
+	<!-- Header -->
+	<header id="header" class="page-topbar">
+        <!-- start header nav-->
+        <div class="navbar-fixed">
+             <nav class="navbar-color" style="height:112px;background: white">
+                <div class="nav-wrapper" ng-class="navBackgroundColor()" style="height: 56px">
+            		<div class="brand-logo left" style="position: absolute;display: inline-block;height: 100%">
+            			<img class="img-responsive center" style="height:100%" src="image/flogo.png" alt="Strap">
+            		</div>	
+            		<div class="valign-wrapper" style="height:100%">
+            			<h1 style="font-size:20px;width:100%" class="center-align valign">Home</h1>
+            		</div>
+            		<div class="right" style="margin-right: 10px;position: absolute;right:0px;top:0px">
+            						<a class="waves-effect waves-light valign-wrapper" ng-click="logout()">
+            						<img class="img-responsive center valign" style="width:40px" src="image/ic_exit_to_app_white_48px.svg" alt="Strap">
+            						</a>
+            		</div>
+            		<div class="row valign-wrapper" style="height:100%;position: relative">
+                        <div class="col s6">
+                                    <a class="waves-effect waves-light btn valign-wrapper" ng-disabled="dayStarted" ng-click="dayStart()" style="width:100%">
+                                    <span class="valign" style="height:100%;font-size:1.3rem;line-height: 36px">Day Start</span>
+                                    </a>
+                        </div>
+                        <div class="col s6">
+                                    <a class="waves-effect waves-light btn valign-wrapper" ng-disabled="!dayStarted || dayEnded" ng-click="dayEnd()" style="width:100%">
+                                    <span class="valign" style="height:100%;font-size:1.3rem;line-height: 36px">Day End</span>
+                                    </a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+        <!-- end header nav-->
+    </header>
+	<main style="overflow-y: auto;display:block;height:100%;position: relative;">
+		<div class="container" style="margin-bottom: 70px;margin-top:70px">
+			<ul class="row">
+				<li ng-repeat="action in actions" ng-click="action.action()" class="col s8 offset-s2">
+					<div class="card green darken-4">
+                        <!-- waves-effect waves-block waves-light -->
+						<div class="card-content card-move-up" style="cursor:pointer">
+							<div class="center-align">
+								<img src="{{action.iconName}}" height="64px">
+							</div>
+							<div class="center-align" style="color:#a5d6a7">{{action.actionLabel}}</div>
+						</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</main>
+	<footer></footer>
+</div>

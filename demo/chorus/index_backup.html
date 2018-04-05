@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+
+<html>
+<head>
+	<title>Chorus 2014 | Sharda University</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">	
+  	<meta name="description" content="Chorus, the annual mega-cultural festival of Sharda University and one of the largest and the most glamorous fests of Northern India, is celebrated in March every year.">
+	<meta name="author" content="Vaibhaw Raj">
+	<link rel="stylesheet" href="css/letter_anim.css" type="text/css">
+	<script src="js/jquery-1.10.2.min.js"></script>
+	<script src="js/letter_anim.js"></script>
+	<script src="js/magic_appear.js"></script>
+	<script src="js/panel_float.js"></script>
+	<script src="js/load_site.js"></script>
+	<script>
+		$(document).ready(function(){
+			init_loadsite();
+			$("#a1").attr("height",$(document).height());
+			$("#a1").attr("width",$(document).width());
+			init_letter_anim();
+			//init_magic();
+			//init_panel_float();
+		});
+	</script>
+</head>
+<body>
+	<canvas id="a1"></canvas>
+	<canvas id="a1_h" height="50" width="53" style="opacity:0"></canvas>
+	<div id="main_bg"></div>
+	<div id="main_bg_cover"></div>
+	<div id="p1"></div>
+	<div id="p2"></div>
+	<div id="load" style="position:fixed;width:200px;height:auto;margin-left:-50px;left:50%;top:30px;text-align:center;color:white;background:rgba(30,30,30,0.6);border-radius:3px;z-index:999;font-family: 'Source Sans Pro', sans-serif, 'Helvetica Neue', Helvetica, Arial;
+color: rgb(127, 100, 38);box-shadow:0px 4px 4px 0px rgba(60,60,60,0.4) inset,0px -4px 4px 0px rgba(60,60,60,0.4) inset">Loading 0%</div>
+</body>

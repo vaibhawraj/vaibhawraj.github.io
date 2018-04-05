@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<!--
+Chart Idea
+Product Sale vs Target - radar chart
+Visit Done vs Planned - Donut % chart
+Market Share By Product - Pie Chart
+Todays Sale Value vs Target
+-->
+<html>
+  <head>
+    <!--Import Google Icon Font-->
+    <link href="css/materialIcon/icon.css" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="css/materialize/materialize.css"  media="screen,projection"/>
+
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <style>
+      div.ng-enter {
+            /* transition on enter for .5s */
+            -webkit-transition-duration: 500ms;
+            transition-duration: 500ms;
+            -webkit-transition-timing-function: cubic-bezier(0.36, 0.66, 0.04, 1);
+            transition-timing-function: cubic-bezier(0.36, 0.66, 0.04, 1);
+            -webkit-transition-property: opacity, -webkit-transform, box-shadow;
+            transition-property: opacity, transform, box-shadow;
+            /* start with opacity 0 (invisible) */
+            position:absolute;
+            width:100%;
+            display: inline-block;
+            opacity: 1;
+            transform: translate3d(100%,0,0);
+        }
+     
+        /* end 'enter' transition */
+        div.ng-enter-active{
+            /* end with opacity 1 (fade in) */
+            opacity: 1;
+            transform:translate3d(0,0,0);
+        }
+        div.ng-leave {
+
+          -webkit-transition-duration: 500ms;
+          transition-duration: 500ms;
+          -webkit-transition-timing-function: cubic-bezier(0.36, 0.66, 0.04, 1);
+          transition-timing-function: cubic-bezier(0.36, 0.66, 0.04, 1);
+          -webkit-transition-property: opacity, -webkit-transform, box-shadow;
+          transition-property: opacity, transform, box-shadow;
+
+            position:absolute;
+            width:100%;
+            display: inline-block;
+     
+            /* start with opacity 0 (invisible) */
+            opacity: 1;
+            transform:translate3d(0,0,0);
+            z-index:-1;
+        }
+        div.ng-leave-active {
+            /* end with opacity 1 (fade in) */
+            top:0px;
+            left:0px;
+            opacity: 1;
+            z-index:-1;
+        }
+        div.ng-enter.forward {
+          transform:translate3d(100%,0,0);
+        }
+        div.ng-enter.backward {
+          transform:translate3d(-100%,0,0);
+        }
+        div.ng-enter-active.forward{
+          transform:translate3d(0,0,0);
+        }
+        div.ng-enter-active.backward{
+            transform:translate3d(0,0,0);
+        }
+        div.ng-leave.forward {
+          transform:translate3d(0,0,0);
+        }
+        div.ng-leave.backward {
+          transform:translate3d(0,0,0);
+        }
+        div.ng-leave-active.forward {
+          transform:translate3d(-100%,0,0);
+        }
+        div.ng-leave-active.backward {
+          transform:translate3d(100%,0,0);
+        }
+        body {
+          display: flex;
+          flex:1;
+          min-height: 100vh;
+          max-width: 100%;
+          overflow-x:hidden;
+          flex-direction: column;
+        }
+        .view-animate-container {
+          display: flex;
+          flex:1;
+          background-color: white;
+          position: relative;
+          overflow: hidden;
+        }
+        .page {
+          position: relative;
+          width: 100%;
+          overflow-y:auto;
+          height:100vh;
+          overflow: hidden;
+        }
+        .range-field .thumb {
+          display: none;
+        }
+    </style>
+  </head>
+
+  <body ng-controller="mainController">
+    <div id="loader" class="splash" style="position: fixed;width: 100%;bottom: 40px;left:0px;z-index: 999999;text-align:center">
+      <div class="preloader-wrapper big active" style="z-index: 999;margin: auto">
+        <div class="spinner-layer spinner-blue">
+          <div class="circle-clipper left">
+            <div class="circle"></div>
+          </div><div class="gap-patch">
+            <div class="circle"></div>
+          </div><div class="circle-clipper right">
+            <div class="circle"></div>
+          </div>
+        </div>
+
+        <div class="spinner-layer spinner-red">
+          <div class="circle-clipper left">
+            <div class="circle"></div>
+          </div><div class="gap-patch">
+            <div class="circle"></div>
+          </div><div class="circle-clipper right">
+            <div class="circle"></div>
+          </div>
+        </div>
+
+        <div class="spinner-layer spinner-yellow">
+          <div class="circle-clipper left">
+            <div class="circle"></div>
+          </div><div class="gap-patch">
+            <div class="circle"></div>
+          </div><div class="circle-clipper right">
+            <div class="circle"></div>
+          </div>
+        </div>
+
+        <div class="spinner-layer spinner-green">
+          <div class="circle-clipper left">
+            <div class="circle"></div>
+          </div><div class="gap-patch">
+            <div class="circle"></div>
+          </div><div class="circle-clipper right">
+            <div class="circle"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="view-animate-container valign-wrapper splash" style="position: fixed;top:0px;left:0px;width: 100%;height: 100%;z-index: 99099" id="loader">
+      <div class="valign center-align" style="margin:auto">
+        <img src="image/logo.png">
+      </div>
+    </div>
+
+    <div ui-view class="view-animate-container" ng-class="getTransitionDirection()"></div>
+    </div>
+
+
+
+    <!--<script src="js/hammerjs.js"></script>
+    <script src="js/velocity.min.js"></script>-->
+    <script type="text/javascript" src="cordova.js"></script>
+    <script src="js/lib/jQuery/jquery-2.1.1.min.js"></script>
+    <script src="js/lib/materialize/materialize.js"></script>
+    <script data-main="js/requireConfig" src="js/lib/requirejs/require.js"></script>
+  </body>
+</html>

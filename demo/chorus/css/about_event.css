@@ -1,0 +1,30 @@
+#about_event
+{
+	position:absolute;
+	right:-180px;
+	top:0px;	
+}
+#about_event > ul
+{
+	margin:0px;
+	padding:0px;
+	list-style:none;
+}
+#about_event > ul > li
+{
+	display:block;
+	width:150px;
+	margin:10px 0px 0px 0px;
+	padding:10px 20px 10px 10px;
+	color:rgb(127, 100, 38);
+	text-shadow:1px 1px 2px white;
+	box-shadow:-10px 0px 30px rgba(225,155,225,0.5) inset;
+	border-radius:0px 5px 5px 0px;
+	background:rgba(127, 100, 38,0.3);/*rgba(10,10,255,0.6);*/
+	cursor:pointer;
+}
+#about_event > ul > li:hover
+{
+	box-shadow:-10px 0px 30px rgba(225,125,125,0.9) inset;	
+}
+

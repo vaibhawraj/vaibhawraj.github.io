@@ -80,7 +80,9 @@ img::-moz-selection {
 body {
   -webkit-tap-highlight-color: #fed136; }
 
-
+.img-fluid {
+  height: 300px !important;
+}
 
 #mainNav {
   background-color: #212529; }

@@ -1,0 +1,18 @@
+{
+  "remoteAccessConsumerKey": "3MVG9i1HRpGLXp.q5uZSAsrVhQZiYJz3CkusdfscDZZ99Pi7kELRAFO.qmYMsLYr9uVauhrG2gJoGJS8TdyCL",
+  "oauthRedirectURI": "http://localhost/dabur/oauthcallback.html",
+  "oauthScopes": [
+    "web",
+    "api",
+    "refresh_token",
+    "offline_access",
+    "id","profile","email","address","phone"
+  ],
+  "isLocal": true,
+  "startPage": "index.html",
+  "errorPage": "error.html",
+  "shouldAuthenticate": true,
+  "attemptOfflineLoad": true,
+  "androidPushNotificationClientId": "",
+  "loginUrl":"https://login.salesforce.com"
+}

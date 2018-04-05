@@ -1,0 +1,154 @@
+<div class="page" ng-class="backgroundColor()">
+	<!-- Header -->
+	<header id="header" class="page-topbar">
+        <!-- start header nav-->
+        <div class="navbar-fixed">
+            <nav class="navbar-color" ng-class="navBackgroundColor()">
+                <div class="nav-wrapper">
+            		
+            		<div class="valign-wrapper" style="height:100%;">
+	            		<div class="waves-effect waves-light" ng-click="cancel()" style="padding:5px;position: absolute;">
+	            		<img class="img-responsive center valign" style="width:40px" src="image/ic_arrow_back_white_48px.svg" alt="Strap">
+	            		</div>
+            			<h1 style="font-size:20px;width:100%" class="center-align valign">Stocks</h1>
+            			<div class="right" style="margin-right: 10px;position: absolute;right:0px;top:0px">
+            						<a class="waves-effect waves-light btn valign-wrapper" ng-click="save()">
+            						<span class="valign" style="height:100%;font-size:1.3rem;line-height: 36px">Save</span>
+            						</a>
+            			</div>
+            		</div>
+
+            		<!--<div class="card" style="margin:0px">
+							<div class="card-image waves-effect waves-block waves-light" ng-class="navBackgroundColor()" style="height:56px; ">
+				            	<span class="card-title" style="padding: 12px; padding-bottom:3px; padding-left:4px; width:100%">
+	        	            		<div class="waves-effect waves-light" ng-click="cancel()" style="padding:5px;">
+	            						<img class="img-responsive center valign" style="width:40px" src="image/ic_arrow_back_white_48px.svg" alt="Strap">
+	            					</div>
+	            					
+	            					<div class="right">
+	            						<a class="waves-effect waves-light btn valign-wrapper" ng-click="save()">
+	            						<span class="valign" style="height:100%;font-size:1.3rem;line-height: 36px">Place Order</span>
+	            						</a>
+	            					</div>
+				            	</span>
+				            </div>
+				            <div class="card-content" style="padding-top: 0px;  padding-bottom: 10px">
+				            	<div class="row">
+				            		<div class="col s6">
+				            			<h4 class="card-title grey-text text-darken-4">{{getTotalProducts()}}</h4>
+				            			<p class="medium-small grey-text" style="line-height:16px">Total SKUs</p>
+				            		</div>
+				            		<div class="col s6">
+				            			<h4 class="card-title grey-text text-darken-4">&#8377 {{getTotalAmount()}}</h4>
+				            			<p class="medium-small grey-text" style="line-height: 16px">Total Amount</p>
+				            		</div>
+				            		<!- -<div class="col s3">
+				            			<h4 class="card-title grey-text text-darken-4">&#8377  {{getMyProfit()}}</h4>
+				            			<p class="medium-small grey-text" style="line-height: 16px">My Profit</p>
+				            		</div>
+				            		<div class="col s3">
+				            			<h4 class="card-title grey-text text-darken-4">&#8377 {{getShopOwnerMargin()}}</h4>
+				            			<p class="medium-small grey-text" style="line-height: 16px">Shop Owner's Profit</p>
+				            		</div>- ->
+				            		
+				            	</div>
+				            </div>
+			        </div>-->
+                </div>
+            </nav>
+        </div>
+        <!-- end header nav-->
+    </header>
+	<main style="overflow-y: auto;display:block;height:100%;position: relative;">
+		<div class="container" style="margin-top:20px;margin-bottom: 80px">
+			<!--<ul class="collapsible" data-collapsible="accordion">
+			    <li ng-repeat="product in productList">
+			    	<div class="collapsible-header waves-effect" ng-click="markActive(product.Id)">
+			    		<span ng-click="addProduct(product.Id)">
+				      		<input type="checkbox" id="product{{product.Id}}" ng-checked="isProductAdded(product.Id)"/>
+				      		<label for="activity1" style="text-decoration: none;color:black" class="ng-binding">
+							{{product.name}}
+							</label>
+						</span>
+						<div class="waves-effect" style="position: absolute;top:0px;right: 0px; color:white;background-color: #c62828;border-left: 1px solid;height: 100%" ng-show="showDeleteButton(product.Id)" ng-click="removeProduct(product.Id)">
+							<div class="valign-wrapper" style="height:100%">
+							<i class="valign material-icons" style="margin-right:0.5rem; margin-left: 0.5rem">delete</i>
+							</div>
+						</div>
+						<span class="badge" style="margin-right:28px" ng-show="getQuantity(product.Id) > 0">{{getQuantity(product.Id)}} @ &#8377 {{getTotalPrice(product.Id)}}</span>
+			    	</div>
+			      	<div class="collapsible-body" style="background-color: white; padding-top:5px; padding-bottom: 0px" ng-style="showBody(product.Id)">
+				      	<div class="row" style="margin-bottom:5px">
+				      		<div class="col s4" style="text-align: center">
+				      			<h6 class="grey-text text-darken-4">&#8377 {{product.mrp}}</h6>
+			            		<p class="medium-small grey-text" style="line-height: 16px;margin-top:5px;margin-bottom: 5px">MRP</p>
+				      		</div>
+				      		<div class="col s4" style="text-align: center">
+				      			<h6 class="grey-text text-darken-4">&#8377 {{product.unitPrice}}</h6>
+			            		<p class="medium-small grey-text" style="line-height: 16px;margin-top:5px;margin-bottom: 5px">Unit Price</p>
+				      		</div>
+				      		<div class="col s4" style="text-align: center">
+				      			<h6 class="grey-text text-darken-4">&#8377 {{product.salesPrice}}</h6>
+			            		<p class="medium-small grey-text" style="line-height: 16px;margin-top:5px;margin-bottom: 5px">Sales Price</p>
+				      		</div>
+				      	</div>
+				      	<div class="row" style="margin-bottom: 5px">
+				      		<div class="col s3 offset-s1 valign-wrapper center-align" style="height: 100%">
+				      		<a class="waves-effect waves-light btn valign" ng-click="removeQuantity(product.Id)"><i class="material-icons">remove</i></a>
+				      		</div>
+				      		<div class="input-field col s4" style="text-align: center">
+						          <input placeholder="1" id="quantity" type="text" class="validate" style="height:25px" ng-model="product.quantity" ng-change="updateQuantity(product.Id)">
+						          <label for="first_name" class="active">Quantity</label>
+						    </div>
+						    <div class="col s4">
+				      		<a class="waves-effect waves-light btn" ng-click="addQuantity(product.Id)"><i class="material-icons">add</i></a>
+				      		</div>
+				      	</div>
+			      	</div>
+			    </li>
+			</ul>-->
+			<ul class="collection with-header" data-collapsible="accordion" ng-repeat="cat in categoryList">
+				<li class="collection-header">
+					<b>{{cat.categoryName}}</b>
+					<div class="right" style="margin-right: 10px;position: absolute;right:0px;top:0px">
+            						<a class="btn-floating white waves-effect" ng-click="getPicture(cat.categoryName)">
+            						<i class="material-icons" style="color:black">add_a_photo</i>
+            						</a>
+        			</div>
+				</li>
+			    <li class="collection-item" ng-repeat="product in cat.items" ng-class="(product.offer)?'light-green lighten-4':''">
+			    	<!--<span>
+				      		<input type="checkbox" id="product{{product.Id}}" ng-checked="isProductAdded(product.Id)"/>
+				      		<label for="activity1" style="text-decoration: none;color:black" class="ng-binding">
+							{{product.name}}
+							</label>
+					</span>-->
+					<span>{{product.name}}</span><i class="material-icons right" style="position: relative;color:red;font-weight: bold" ng-show="(product.quantity < product.unitPrice)">keyboard_arrow_down</i>
+					<i class="material-icons right" style="position: relative;color:green;font-weight: bold" ng-show="(product.quantity >= product.unitPrice)">keyboard_arrow_up</i>
+						<div class="row" style="margin-bottom:5px">
+				      		<div class="col s3" style="text-align: center">
+				      			<h6 class="grey-text text-darken-4">{{product.mrp}}</h6>
+			            		<p class="medium-small grey-text" style="line-height: 16px;margin-top:5px;margin-bottom: 5px">Last Stock Status</p>
+				      		</div>
+				      		<div class="col s3" style="text-align: center">
+				      			<h6 class="grey-text text-darken-4">{{product.unitPrice}}</h6>
+			            		<p class="medium-small grey-text" style="line-height: 16px;margin-top:5px;margin-bottom: 5px">MBQ</p>
+				      		</div>
+				      		<div class="col s2" style="height: 100%;margin-top:10px">
+				      		<a class="btn valign" ng-click="removeQuantity(product.Id)" style="padding:0px;width:100%"><i class="material-icons">remove</i></a>
+				      		</div>
+				      		<div class="input-field col s2" style="text-align: left; height: 100%;margin-top:25px">
+						          <input id="quantity" type="text" class="validate" style="height:25px" ng-model="product.quantity" ng-change="updateQuantity(product.Id)">
+						          <label for="first_name" class="active">Quantity</label>
+						    </div>
+						    <div class="col s2" style="height: 100%;margin-top:10px">
+				      		<a class="btn" style="padding:0px;width:100%" ng-click="addQuantity(product.Id)"><i class="material-icons">add</i></a>
+				      		</div>
+				      	</div>
+				      	<span ng-show="product.offer" style="font-size:12px;font-weight:bold">Offer: {{product.offer}}</span>
+			    </li>
+			</ul>
+		</div>
+	</main>
+	<footer></footer>
+</div>

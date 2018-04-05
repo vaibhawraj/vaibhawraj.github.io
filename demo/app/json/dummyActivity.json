@@ -1,0 +1,38 @@
+[
+	{
+		"Id":"",
+		"Account": {"Id":"","Name":"Safeway","BillingStreet":"500 El Camino Real","BillingCity":"Santa Clara"},
+		"shopOwner":"John Smith",
+		"lastPurchase":"2800",
+		"balanceDue":"500",
+		"todaysOrder":"1850",
+		"ActivityDate":"Feb 28 2018"
+	},
+	{
+		"Id":"",
+		"Account": {"Id":"","Name":"7 Eleven","BillingStreet":"The Alameda","BillingCity":"Santa Clara"},
+		"shopOwner":"John Smith",
+		"lastPurchase":"2800",
+		"balanceDue":"500",
+		"todaysOrder":"1850",
+		"ActivityDate":"Feb 28 2018"
+	},
+	{
+		"Id":"",
+		"Account": {"Id":"","Name":"Walmart","BillingStreet":"500 El Camino Real","BillingCity":"Santa Clara"},
+		"shopOwner":"John Smith",
+		"lastPurchase":"2800",
+		"balanceDue":"500",
+		"todaysOrder":"1850",
+		"ActivityDate":"Feb 28 2018"
+	},
+	{
+		"Id":"",
+		"Account": {"Id":"","Name":"Walgreens","BillingStreet":"500 El Camino Real","BillingCity":"Santa Clara"},
+		"shopOwner":"John Smith",
+		"lastPurchase":"2800",
+		"balanceDue":"500",
+		"todaysOrder":"1850",
+		"ActivityDate":"Feb 28 2018"
+	}
+]
