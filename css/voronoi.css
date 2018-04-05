@@ -1,0 +1,56 @@
+.masthead {
+	position: relative;
+}
+#masthead-bg {
+	position: absolute;
+	top:0px;
+	left: 0px;
+	height: 100%;
+	width: 100%;
+	z-index:-1;
+
+	background-image: url("../img/header-bg.jpg");
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  background-position: center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background:#18bc9c!important;
+}
+
+#svg-head  {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top:0px;
+  left:0px;
+}
+
+.links {
+  stroke: #000;
+  stroke-opacity: 0.2;
+}
+
+.polygons {
+  fill: none;
+  stroke: #2c3e50;
+  stroke-opacity:0.3; 
+}
+
+.polygons :first-child {
+  fill: #f00;
+  fill-opacity:0.2;
+}
+
+.sites {
+  fill: #000;
+  fill-opacity:0.4;
+  stroke: #fff;
+}
+
+.sites :first-child {
+  fill: #fff;
+}
+
